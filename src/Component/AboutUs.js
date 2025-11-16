@@ -12,7 +12,7 @@ export default function AboutUs(props) {
 
       <div className="row g-4 mt-4">
         <div className="col-md-4">
-          <div className={`p-4 border rounded ${props.mode === 'light' ? 'bg-light' : ''} h-100`} style = {{ backgroundColor: props.mode === 'dark' ? '#01203f' : ''}}>
+          <div className="p-4 border rounded h-100" style = {{ backgroundColor: props.textAreaStyle.backgroundColor}}>
             <h4 className="fw-semibold" style={{ color: props.textAreaStyle.color }}>Our Vision</h4>
             <p className="mb-0" style={{ color: props.textAreaStyle.color }}>
               To build technology that makes life simpler and more efficient for
@@ -22,7 +22,7 @@ export default function AboutUs(props) {
         </div>
 
         <div className="col-md-4">
-          <div className={`p-4 border rounded ${props.mode === 'light' ? 'bg-light' : ''} h-100`} style = {{ backgroundColor: props.mode === 'dark' ? '#01203f' : ''}}>
+          <div className="p-4 border rounded h-100" style = {{ backgroundColor: props.textAreaStyle.backgroundColor}}>
             <h4 className="fw-semibold" style={{ color: props.textAreaStyle.color }}>Our Values</h4>
             <p className="mb-0" style={{ color: props.textAreaStyle.color }}>
               We believe in honesty, innovation, teamwork, and continuous
@@ -32,7 +32,7 @@ export default function AboutUs(props) {
         </div>
 
         <div className="col-md-4">
-          <div className={`p-4 border rounded ${props.mode === 'light' ? 'bg-light' : ''} h-100`} style = {{ backgroundColor: props.mode === 'dark' ? '#01203f' : ''}}>
+          <div className="p-4 border rounded h-100" style = {{ backgroundColor: props.textAreaStyle.backgroundColor}}>
             <h4 className="fw-semibold" style={{ color: props.textAreaStyle.color }}>Our Team</h4>
             <p className="mb-0" style={{ color: props.textAreaStyle.color }}>
               A group of passionate developers, designers, and creators working

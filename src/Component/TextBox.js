@@ -9,18 +9,25 @@ export default function TextBox(props) {
     }
 
     const handleCaseChange = (event) => {
-        if(event.target.value === 'Uppercase')
+        if(event.target.value === 'Uppercase') {
             updateText(text.toUpperCase());
-        else if(event.target.value === 'Lowercase')
+            props.showAlert("Text coverted to uppercase");
+        }
+        else if(event.target.value === 'Lowercase') {
             updateText(text.toLowerCase());
-        else
+            props.showAlert("Text coverted to uppercase");
+        }  
+        else {            
             updateText('');
+            props.showAlert("Text cleared");
+        }
     }
 
     const handleOnCopy = () => {
         var copyText = document.getElementById("myTextBox");
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        props.showAlert("Text copied to clipboard");
     }
 
     return (
