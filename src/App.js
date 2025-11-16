@@ -46,9 +46,9 @@ function App() {
       darkModeTextColor = {darkModeTextColor}/>
       <Routes>
         <Route path="/" element={<TextBox mode = {mode} heading = "Enter Your Text Below" textAreaStyle = {textAreaStyle} />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<AboutUs textAreaStyle = {textAreaStyle} mode = {mode} />} />
         <Route path="/contact" 
-        element={<ContactUs />}
+        element={<ContactUs textAreaStyle = {textAreaStyle} />}
          />
       </Routes>
     </Router>
