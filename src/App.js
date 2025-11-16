@@ -41,7 +41,7 @@ function App() {
   return (
     <>
     
-    <Router>
+    <Router basename='/test-util-react'>
       <Navbar mode = {mode} toggleMode = {toggleMode} title = "Text Utility" 
       darkModeTextColor = {darkModeTextColor}/>
       <Routes>
