@@ -22,17 +22,30 @@ function App() {
 
   const [animation, setAnimation] = useState("slide-in");
 
+  const [progress, setProgress] = useState(100); // progress bar %
+
   const showAlert = (message) => {
       setAnimation("slide-in");
       setAlert({
         msg: message
       });
+      setProgress(100);
+
+      // animate progress bar
+      let elapsed = 0;
+      const interval = setInterval(() => {
+        let percent = 100 - (elapsed);
+        setProgress(percent > 0 ? percent : 0);
+        elapsed+= 2;
+        if(percent === 0)
+          clearInterval(interval);
+      }, 40);
       setTimeout  (() => {
         setAnimation("slide-out");
-      }, 1500);
+      }, 2000);
       setTimeout  (() => {
         setAlert(null);
-      }, 1800);   
+      }, 2100);   
   }
 
   const toggleMode = () => {
@@ -64,7 +77,7 @@ function App() {
     <Router basename='/test-util-react'>
       <Navbar mode = {mode} toggleMode = {toggleMode} title = "Text Utility" 
       darkModeTextColor = {darkModeTextColor}/>
-      <Alert alert={alert} animation={animation}/>
+      <Alert alert={alert} animation={animation} progress={progress}/>
       <Routes>
         <Route path="/" element={<TextBox mode = {mode} heading = "Enter Your Text Below" textAreaStyle = {textAreaStyle}  showAlert = {showAlert}/>} />
         <Route path="/about" element={<AboutUs textAreaStyle = {textAreaStyle} mode = {mode} />} />

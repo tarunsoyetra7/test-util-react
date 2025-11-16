@@ -42,6 +42,7 @@
   width: fit-content;
   margin: 0 auto;
   padding: 15px 30px;
+  overflow: hidden;
 }
 
 .slide-in {
@@ -49,7 +50,7 @@
 }
 
 .slide-out {
-  animation: slideFadeOut 0.35s ease-in forwards;
+  animation: slideFadeOut 0.2s ease-in forwards;
 }
 
 @keyframes slideFadeIn {
@@ -72,4 +73,20 @@
     opacity: 0;
     transform: translateY(-12px);
   }
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(0,0,0,0.1);
+}
+
+.progress-bar-fill {
+  height: 4px;
+  background: rgba(0,0,0,0.3);
+  transition: width 0.05s linear;
 }
